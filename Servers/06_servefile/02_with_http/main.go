@@ -8,6 +8,7 @@ import (
 func main() {
 
 	http.HandleFunc("/honda", serveHonda)
+	http.Handle("/all", http.FileServer(http.Dir(".")))
 	http.ListenAndServe(":8080", nil)
 }
 
