@@ -23,5 +23,6 @@ func serveHonda(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, "File not found", 404)
 	}
 
-	http.ServeContent(w, req, fi.Name(), fi.ModTime(), f)
+	//http.ServeContent(w, req, fi.Name(), fi.ModTime(), f)
+	http.ServeFile(w, req, fi.Name())
 }
